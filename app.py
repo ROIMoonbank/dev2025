@@ -9,7 +9,7 @@ logger = logging.getLogger('waitress')
 logger.setLevel(logging.DEBUG)
 
 @app.route("/")
-def hello():
+def index():
   randomnum = random.randint(1, 100000)/100
   return "Your Bank Account Balance is: $" + str(randomnum) + "!\n"
 
