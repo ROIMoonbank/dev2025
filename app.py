@@ -10,12 +10,16 @@ logger.setLevel(logging.DEBUG)
 
 @app.route("/")
 def hello():
-  randomnum = random.randint(1, 100000000)/100
-  return "Your Random Number is " + str(randomnum) + "!\n"
+  randomnum = random.randint(1, 100000)/100
+  return "Your Bank Account Balance is: $" + str(randomnum) + "!\n"
 
 @app.route("/version")
 def version():
-  return "ROI Moonbank Demo 1.0\n"
+  return "ROI Moonbank Demo 1.1\n"
+
+@app.route("/hello")
+def hello():
+  return "Hello - welcome to Moonbank\n"
 
 if __name__ == "__main__":
   serve(app,host="0.0.0.0",port=int(os.environ.get("PORT", 8080)))
